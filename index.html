@@ -25,8 +25,20 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
     function onDeviceReady() {
-       
+       var devid = device.uuid
 alert(device.uuid);
+
+	if (devid == "aab456fe57c15e2f"){
+		alert("ja");
+	} else {
+	 alert("nee");
+	}
+	
+	if (devid == "bab456fe57c15e2f"){
+		alert("ja2");
+	} else {
+	 alert("nee2");
+	}
     }
 
     </script>
