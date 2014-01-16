@@ -25,9 +25,8 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
     function onDeviceReady() {
-        $( "p" ).append( document.createTextNode( "Hello " ) );
-$( "p" ).append( document.createTextNode( "Hello there " +  device.uuid ) );
-console.log(device.uuid);
+       
+alert(device.uuid);
     }
 
     </script>
