@@ -16,9 +16,9 @@
 <p>I would like to say: </p>
  
 <script>
-$( "p" ).append( document.createTextNode( "Hello " ) )
-$( "p" ).append( document.createTextNode( "Hello " +  device.uuid ) );
-console.log("device.uuid");
+$( "p" ).append( document.createTextNode( "Hello " ) );
+$( "p" ).append( document.createTextNode( "Hello there " +  device.uuid ) );
+console.log(device.uuid);
 </script>
  
 </body>
