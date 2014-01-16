@@ -25,6 +25,7 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
     function onDeviceReady() {
+	 document.addEventListener("resume", onResume, false);
        var devid = device.uuid
 alert(device.uuid);
 
@@ -39,6 +40,13 @@ alert(device.uuid);
 	} else {
 	 alert("nee2");
 	}
+	   function onResume() {
+	   alert("hi daar");
+    }
+	
+	window.plugin.notification.local.add({ message: 'Great app!' })
+	
+	
     }
 
     </script>
@@ -46,6 +54,8 @@ alert(device.uuid);
 <body>
  
 <p>I would like to say: </p>
+
+<p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
  
 <script>
 
