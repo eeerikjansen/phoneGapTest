@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "info.erikjansen.deviceID"
+        versionCode = "10" 
+        version     = "0.1.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>dev ID</name>
+	<gap:plugin name="org.apache.cordova.device" />
+  
+
+</widget>
