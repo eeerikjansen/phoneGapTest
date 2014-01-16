@@ -14,7 +14,7 @@
     //
     function onDeviceReady() {
         var element = document.getElementById('deviceProperties');
-
+		
         element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
                             'Device PhoneGap: ' + device.phonegap + '<br />' + 
                             'Device Platform: ' + device.platform + '<br />' + 
@@ -23,10 +23,24 @@
 							
 		console.log(device.uuid);
     }
+	
+	function tada(){
+	element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+							
+		console.log(device.uuid);
+	
+	}
+	
 
     </script>
   </head>
   <body>
     <p id="deviceProperties">Loading device properties...</p>
+	
+	<button onclick="tada()";
   </body>
 </html>
