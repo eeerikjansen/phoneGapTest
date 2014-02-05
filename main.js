@@ -90,7 +90,7 @@
                     	if (e.foreground)
                     	{
 							$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
-
+							window.plugin.notification.local.add({ message: 'Deurbel!' })
 							// if the notification contains a soundname, play it.
 							var my_media = new Media("/android_asset/www/"+e.soundname);
 							my_media.play();
@@ -99,8 +99,10 @@
 						{	// otherwise we were launched because the user touched a notification in the notification tray.
 							if (e.coldstart)
 								$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+								window.plugin.notification.local.add({ message: 'coldstart, Deurbel' })
 							else
 							$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+							window.plugin.notification.local.add({ message: 'Background, Deurbel!' })
 						}
 
 						$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
@@ -140,51 +142,11 @@
 	   socketio = io.connect("192.168.1.100:1337");
     }
 	
-	//window.plugin.notification.local.add({ message: 'Great app!' })
+	
 	
 	////////////////
 	
-	  var connected = false;
-  var connChanged = false;
-  var inLogServer = devid +"=Erik";
-  var socketio = io.connect("192.168.1.100:1337");
-  
-  
-socketio.on('connect', function() {
-	checkConn = function(){
-	
-	 if (socketio.socket.connected == !connected){
-	 	 
-		if (socketio.socket.connected){
-			//$( "#noWebBar" ).empty();
-			
-		}
-		else {
-	 		//$('#pageone').prepend("<div id=noWebBar><h4 class=\"ui-bar ui-bar-b\" >Geen verbinding met de cocktailmachine! Er wordt automatisch opnieuw verbinding gemaakt.</h4></div>");
-			}
-		}
-	 connected = socketio.socket.connected;
-	}
-	
-  setInterval("checkConn()", 5000);
-  
-  
-});
 
-
-function sendMessage(val) {
-    //var msg = document.getElementById("message_input").value;
-    socketio.emit("message_to_server", { message : val});
-}
-
-socketio.on("message_to_client", function(data) {
-    //document.getElementById("status1").innerHTML = (data['message']);
-	var now = new Date(),
-        now = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
-	//$( '.status1' ).replaceWith( "<div class = \"status1\">" + (data['message']) + "</div>" );
-	//$( '.status' ).append(now +" "+ (data['message']) + "<br>" );
-	console.log(data['message']);
-});
 	var now1 = new Date(),
         now1 = now1.getHours()+':'+now1.getMinutes()+':'+now1.getSeconds();
   
