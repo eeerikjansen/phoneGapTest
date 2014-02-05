@@ -1,0 +1,12 @@
+header:before {
+border-bottom: 1px solid #58595A;
+}
+
+h2 {
+color: #F0F1F1;
+padding-left:1em;
+}
+
+#swtch {
+padding-left:1.5em;
+}
