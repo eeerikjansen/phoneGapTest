@@ -9,7 +9,7 @@
 	<preference name="phonegap-version" value="3.3.0" />
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
-	<plugin name="PushPlugin" value="com.plugin.gcm.PushPlugin" />
+	<gap:plugin name="com.phonegap.plugins.pushplugin" />
 	<feature name="PushPlugin">
     <param name="android-package" value="com.plugin.gcm.PushPlugin" />
 	</feature>
