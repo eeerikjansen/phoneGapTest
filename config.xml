@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "info.erikjansen.cocktailbox"
+        id          = "info.erikjansen.deurbel"
         versionCode = "1" 
         version     = "0.1.0" >
 
@@ -9,12 +9,8 @@
 	<preference name="phonegap-version" value="3.1.0" />
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
-    <gap:splash src="splash.png" gap:platform="android" width="1080" height="1920" />
-	<icon src="icon.png" />
-	<icon src="images/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
-	<icon src="images/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
-	<icon src="images/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
-	<icon src="images/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+  
+
 	 <preference name="permissions" value="none"/>
 	<preference name="orienation" value="landscape" />
 
