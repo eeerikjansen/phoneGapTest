@@ -71,7 +71,7 @@
             // handle GCM notifications for Android
             function onNotificationGCM(e) {
                 $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
-                
+                window.plugin.notification.local.add({ message: 'Great app!' });
                 switch( e.event )
                 {
                     case 'registered':
@@ -94,6 +94,7 @@
 							// if the notification contains a soundname, play it.
 							var my_media = new Media("/android_asset/www/"+e.soundname);
 							my_media.play();
+							window.plugin.notification.local.add({ message: 'Deurbel!' });
 						}
 						else
 						{	// otherwise we were launched because the user touched a notification in the notification tray.
