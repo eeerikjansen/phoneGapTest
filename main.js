@@ -105,8 +105,8 @@
 						var now1 = new Date();
 						var mm = now1.getMonth()+1;
 						now1 = now1.getDate()+"-"+mm+"  "+now1.getHours()+':'+now1.getMinutes();
-						
-						$("#lijst").append('<li class="topcoat-list__item">'+now1+" Er is aangebeld!"+' </li>');
+						alert(now1");
+						$("#lijst").append('<li class="topcoat-list__item">'+now1+' Er is aangebeld!'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
                     
