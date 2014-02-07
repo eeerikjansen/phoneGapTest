@@ -97,16 +97,15 @@
 						}
 						else
 						{	// otherwise we were launched because the user touched a notification in the notification tray.
-							if (e.coldstart)
+							if (e.coldstart){}
 								//$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-							else
+							else{}
 							//$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
 						var now1 = new Date();
 						var mm = now1.getMonth()+1;
-						now1 = now1.getDate()+"-"+mm+"  "+now1.getHours()+":"+now1.getMinutes();
-						alert(now1);
-						$("#lijst").append('<li class="topcoat-list__item">'+now1+' Er is aangebeld!'+' </li>');
+						now1 = now1.getDate()+"-"+mm+"&nbsp;&nbsp;"+now1.getHours()+":"+now1.getMinutes();
+						$("#lijst").append('<li class="topcoat-list__item">'+now1+'&nbsp;&nbsp;&nbsp;Er is aangebeld!'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
                     
@@ -133,7 +132,7 @@
             function errorHandler (error) {
                 //$("#app-status-ul").append('<li>error:'+ error +'</li>');
             }
-            
+			
 			document.addEventListener('deviceready', onDeviceReady, true);
 
 
