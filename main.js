@@ -15,7 +15,7 @@
             function onDeviceReady() {
                 //$("#app-status-ul").append('<li>deviceready event received</li>');
                 
-				document.addEventListener("backbutton", function(e)
+				/* document.addEventListener("backbutton", function(e)
 				{
                 	//$("#app-status-ul").append('<li>backbutton event received</li>');
   					
@@ -30,7 +30,7 @@
 					{
 						navigator.app.backHistory();
 					}
-				}, false);
+				}, false); */
 
 				try 
 				{ 
@@ -104,8 +104,8 @@
 						}
 						var now1 = new Date();
 						var mm = now1.getMonth()+1;
-						now1 = now1.getDate()+"-"+mm+"  "+now1.getHours()+':'+now1.getMinutes();
-						alert(now1");
+						now1 = now1.getDate()+"-"+mm+"  "+now1.getHours()+":"+now1.getMinutes();
+						alert(now1);
 						$("#lijst").append('<li class="topcoat-list__item">'+now1+' Er is aangebeld!'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
