@@ -90,23 +90,20 @@
                     	if (e.foreground)
                     	{
 							//$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
-							alert("fore")
+							alert("Er is aangebeld!")
 							// if the notification contains a soundname, play it.
 							//var my_media = new Media("/android_asset/www/"+e.soundname);
 							//my_media.play();
 						}
 						else
 						{	// otherwise we were launched because the user touched a notification in the notification tray.
-							if (e.coldstart){ alert("cold")}
+							if (e.coldstart){ alert("Op "+ e.payload.message + " is er aangebeld.")}
 								//$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-							else{alert("back")}
+							else{alert("Op "+ e.payload.message + " is er aangebeld.")}
 							//$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
-						var now1 = new Date();
-						var mm = now1.getMonth()+1;
-						now1 = now1.getDate()+"-"+mm+"&nbsp;&nbsp;"+now1.getHours()+":"+now1.getMinutes();
-						alert(now1);
-						$("#lijst").append('<li class="topcoat-list__item">'+now1+'&nbsp;&nbsp;&nbsp;Er is aangebeld!'+' </li>');
+						
+						$("#lijst").prepend('<li class="topcoat-list__item">'+ e.payload.message +'&nbsp;&nbsp;&nbsp;Er is aangebeld.'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
                     
