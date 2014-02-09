@@ -79,7 +79,7 @@
                     case 'registered':
 					if ( e.regid.length > 0 )
 					{
-						$("#lijst").append("<button class=\"topcoat-button\" onclick=\"window.plugins.socialsharing.share("+ e.regid +")\">Registreren</button>");
+						$("#lijst").append("<button class=\"topcoat-button\" onclick=\"window.plugins.socialsharing.share(\'"+ e.regid +"\')\">Registreren</button>");
 						
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
