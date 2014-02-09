@@ -16,14 +16,14 @@
                 //$("#app-status-ul").append('<li>deviceready event received</li>');
                 var socketio = io.connect("192.168.1.99:1337");
                 socketio.on('connect', function() {
-  
-				});
-				
-				function sendMessage(val) {
+  function sendMessage(val) {
     
 					socketio.emit("message_to_server", { message : val});
 					alert(val);
 				}
+				});
+				
+				
 				/* document.addEventListener("backbutton", function(e)
 				{
                 	//$("#app-status-ul").append('<li>backbutton event received</li>');
