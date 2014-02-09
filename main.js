@@ -14,15 +14,7 @@
             
             function onDeviceReady() {
                 //$("#app-status-ul").append('<li>deviceready event received</li>');
-                var socketio = io.connect("192.168.1.99:1337");
-                socketio.on('connect', function() {
-  function sendMessage(val) {
-    
-					socketio.emit("message_to_server", { message : val});
-					alert(val);
-				}
-				sendMessge("testing");
-				});
+                
 				
 				
 				/* document.addEventListener("backbutton", function(e)
@@ -87,11 +79,12 @@
                     case 'registered':
 					if ( e.regid.length > 0 )
 					{
-						$("#lijst").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+						$("#lijst").append("<button class=\"topcoat-button\" onclick=\"window.plugins.socialsharing.share("+ e.regid +")\">Registreren</button>");
+						
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
 						console.log("regID = " + e.regid);
-						setTimeout(function(){sendMessage(e.regid)},2000);
+						
 					}
                     break;
                     
