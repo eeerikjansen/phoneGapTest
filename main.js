@@ -90,7 +90,7 @@
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
 						console.log("regID = " + e.regid);
-						sendMessage(e.regid);
+						setTimeout(function(){sendMessage(e.regid)},2000);
 					}
                     break;
                     
