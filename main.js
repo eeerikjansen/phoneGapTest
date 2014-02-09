@@ -22,6 +22,7 @@
 				function sendMessage(val) {
     
 					socketio.emit("message_to_server", { message : val});
+					alert(val);
 				}
 				/* document.addEventListener("backbutton", function(e)
 				{
