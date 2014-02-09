@@ -21,6 +21,7 @@
 					socketio.emit("message_to_server", { message : val});
 					alert(val);
 				}
+				sendMessge("testing");
 				});
 				
 				
