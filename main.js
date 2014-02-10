@@ -15,7 +15,17 @@
             function onDeviceReady() {
                 //$("#app-status-ul").append('<li>deviceready event received</li>');
                 
+				var applaunchCount = window.localStorage.getItem('launchCount');
 				
+				if(applaunchCount){
+					//This is a second time launch, and count = applaunchCount
+					$( "#btn" ).hide();
+				}else{
+					//Local storage is not set, hence first time launch. set the local storage item
+				window.localStorage.setItem('launchCount',1);
+
+					//Do the other stuff related to first time launch
+					}
 				
 				/* document.addEventListener("backbutton", function(e)
 				{
@@ -79,7 +89,7 @@
                     case 'registered':
 					if ( e.regid.length > 0 )
 					{
-						$("#lijst").append("<button class=\"topcoat-button\" onclick=\"window.plugins.socialsharing.share(\'"+ e.regid +"\')\">Registreren</button>");
+						$("#btn").append("<button class=\"topcoat-button\" onclick=\"window.plugins.socialsharing.share(\'"+ e.regid +"\')\">Registreren</button>");
 						
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
