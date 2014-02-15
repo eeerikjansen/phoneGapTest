@@ -5,6 +5,9 @@
     // it will call the event `deviceready`.
     // 
     document.addEventListener("deviceready", onDeviceReady, false);
+	window.addEventListener('load', function () {
+    new FastClick(document.body);
+}, false);
 
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
@@ -147,7 +150,81 @@
 			
 			document.addEventListener('deviceready', onDeviceReady, true);
 
+/////////////// render HTML ///////////
 
+var strVar="";
+strVar += "<div class=\"topcoat-navigation-bar\">";
+strVar += "    <div class=\"topcoat-navigation-bar__item center full\">";
+strVar += "        <h1 class=\"topcoat-navigation-bar__title\">Deurbel Asterstraat<\/h1>";
+strVar += "	  <\/div>";
+strVar += "	";
+strVar += "<\/div>";
+strVar += "";
+strVar += "<div class=\"topcoat-tab-bar full\">";
+strVar += "   <label class=\"topcoat-tab-bar__item\">";
+strVar += "     <input type=\"radio\" name=\"topcoat\">";
+strVar += "     <a href=\"#page1\"><\/a>";
+strVar += "   <\/label>";
+strVar += "   <label class=\"topcoat-tab-bar__item\">";
+strVar += "     <input type=\"radio\" name=\"topcoat\">";
+strVar += "     <a href=\"#page2\"><\/a>";
+strVar += "   <\/label>";
+strVar += "   <label class=\"topcoat-tab-bar__item\">";
+strVar += "     <input type=\"radio\" name=\"topcoat\">";
+strVar += "     <a href=\"#page3\"><\/a>";
+strVar += "   <\/label>";
+strVar += "<\/div>";
+strVar += "<header>";
+strVar += "<h2>{{name}}<\/h2>";
+strVar += "<\/header>";
+strVar += "{{htmlBody}}";
+
+
+
+
+
+var homePage = ""
+   homePage += "<div class=\"topcoat-list\">";
+homePage += "  <h3 class=\"topcoat-list__header\">Aangebeld<\/h3>";
+homePage += "  <ul class=\"topcoat-list__container\" id=\"lijst\">";
+homePage += "   <\/ul>";
+homePage += "<\/div>";
+homePage += "<p id=\"btn\"><\/p>";
+
+
+
+var slider = new PageSlider($("#container"));
+$(window).on('hashchange', route);
+
+// Basic page routing
+function route(event) {
+    var page,
+        hash = window.location.hash;
+
+    if (hash === "#page1") {
+        page = merge(strVar, {htmlBody: homePage, name: "Bel-lijst"});
+//        slider.slide($(page), "right");
+    } else if (hash === "#page2") {
+        page = merge(strVar, {htmlBody:  "<img class=\"decoded\" src=\"http://delisle.saskatooncatholic.ca/sites/delisle.saskatooncatholic.ca/files/sample-1.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto"});
+//        slider.slide($(page), "right");
+    } else if (hash === "#page3") {
+        page = merge(strVar, {htmlBody: "<img class=\"decoded\" src=\"http:\/\/192.168.1.100:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img>", name: "Camera"});
+//        slider.slide($(page), "right");
+    }
+
+
+    slider.slidePage($(page));
+
+}
+
+// Primitive template processing. In a real-life app, use Handlerbar.js, Mustache.js or another template engine
+function merge(tpl, data) {
+    return tpl.replace("{{htmlBody}}", data.htmlBody)
+			.replace("{{name}}", data.name)
+             
+}
+
+route();
 
 
 	
