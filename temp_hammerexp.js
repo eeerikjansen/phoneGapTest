@@ -36,7 +36,7 @@ homePage += "<p id=\"btn\"><\/p>";
 var slider = new PageSlider($("#container"));
 $(window).on('hashchange', route);
 var oldUrl;
-
+var hammertime = Hammer(document.body);
 // Basic page routing
 function route(event) {
     var page,
@@ -50,7 +50,14 @@ function route(event) {
         slider.slidePageFrom($(page), "right");
 		}
 		
-	
+		hammertime.on("swipeleft dragleft", function(ev) {
+        location.href='#page3';
+		
+		});
+		hammertime.on("swiperight dragright", function(ev) {
+        location.href='#';
+		
+		});
 		
     } else if (hash === "#page3") {
 		oldUrl = hash;
@@ -58,14 +65,28 @@ function route(event) {
         slider.slidePageFrom($(page), "right");
 		
 		
+		hammertime.on("swiperight", function(ev) {
+        location.href='#page2';
 		
+		});
+		hammertime.on("swipeleft", function(ev) {
+      
+		
+		});
 	
     }
 	else{
 	page = merge(strVar, {htmlBody: homePage, name: "Bel-lijst", hashHome: ""});
 	slider.slidePageFrom($(page), "left");
 	oldUrl = hash;
-
+	hammertime.on("swipeleft", function(ev) {
+        location.href='#page2';
+		
+		});
+	hammertime.on("swiperight", function(ev) {
+        
+		
+		});
 	
 	}
 
