@@ -1,13 +1,7 @@
 
 var strVar="";
-strVar += "<div> <div class=\"topcoat-navigation-bar\">";
-strVar += "    <div class=\"topcoat-navigation-bar__item center full\">";
-strVar += "        <h1 class=\"topcoat-navigation-bar__title\">Deurbel Asterstraat<\/h1>";
-strVar += "	  <\/div>";
-strVar += "	";
-strVar += "<\/div>";
-strVar += "";
-strVar += "<div class=\"topcoat-tab-bar full\">";
+
+strVar += "<div><div class=\"topcoat-tab-bar full\">";
 strVar += "   <label class=\"topcoat-tab-bar__item\">";
 strVar += "     <input type=\"radio\" name=\"topcoat\">";
 strVar += "     <a class=\"topcoat-tab-bar__button full\" href=\"{{hashHome}}\">Lijst<\/a>";
@@ -42,28 +36,40 @@ homePage += "<p id=\"btn\"><\/p>";
 var slider = new PageSlider($("#container"));
 $(window).on('hashchange', route);
 var oldUrl;
+var hammertime = Hammer(document.body);
 // Basic page routing
 function route(event) {
     var page,
         hash = window.location.hash;
 	
     if (hash === "#page2") {
-        page = merge(strVar, {htmlBody:  "<img class=\"decoded\" src=\"http://delisle.saskatooncatholic.ca/sites/delisle.saskatooncatholic.ca/files/sample-1.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
+        page = merge(strVar, {htmlBody:  "<img src=\"http://delisle.saskatooncatholic.ca/sites/delisle.saskatooncatholic.ca/files/sample-1.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
 		if (oldUrl === "#page3"){
 		slider.slidePageFrom($(page), "left");
 		}else{		
         slider.slidePageFrom($(page), "right");
 		}
 		
+		hammertime.on("swipeleft", function(ev) {
+        location.href='#';
+		});
+		hammertime.on("swiperight", function(ev) {
+        location.href='#page3';
+		});
+		
     } else if (hash === "#page3") {
 		oldUrl = hash;
-        page = merge(strVar, {htmlBody: "<img class=\"decoded\" src=\"http:\/\/192.168.1.100:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img>", name: "Camera", hashHome: "#"});
+        page = merge(strVar, {htmlBody: "<img src=\"http:\/\/192.168.1.100:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img><button class=\"topcoat-button\" onClick=\"window.location.reload()\">Reload<\/button>", name: "Camera", hashHome: "#"});
         slider.slidePageFrom($(page), "right");
+	
     }
 	else{
 	page = merge(strVar, {htmlBody: homePage, name: "Bel-lijst", hashHome: ""});
 	slider.slidePageFrom($(page), "left");
 	oldUrl = hash;
+	hammertime.on("swiperight", function(ev) {
+        location.href='#page2';
+		});
 	}
 
 
@@ -79,3 +85,8 @@ function merge(tpl, data) {
 }
 
 route();
+
+
+
+
+    
