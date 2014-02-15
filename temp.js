@@ -50,26 +50,44 @@ function route(event) {
         slider.slidePageFrom($(page), "right");
 		}
 		
-		hammertime.on("swipeleft", function(ev) {
-        location.href='#';
-		});
-		hammertime.on("swiperight", function(ev) {
+		hammertime.on("swipeleft dragleft", function(ev) {
         location.href='#page3';
+		
+		});
+		hammertime.on("swiperight dragright", function(ev) {
+        location.href='#';
+		
 		});
 		
     } else if (hash === "#page3") {
 		oldUrl = hash;
         page = merge(strVar, {htmlBody: "<img src=\"http:\/\/192.168.1.100:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img><button class=\"topcoat-button\" onClick=\"window.location.reload()\">Reload<\/button>", name: "Camera", hashHome: "#"});
         slider.slidePageFrom($(page), "right");
+		
+		
+		hammertime.on("swiperight", function(ev) {
+        location.href='#page2';
+		
+		});
+		hammertime.on("swipeleft", function(ev) {
+      
+		
+		});
 	
     }
 	else{
 	page = merge(strVar, {htmlBody: homePage, name: "Bel-lijst", hashHome: ""});
 	slider.slidePageFrom($(page), "left");
 	oldUrl = hash;
-	hammertime.on("swiperight", function(ev) {
+	hammertime.on("swipeleft", function(ev) {
         location.href='#page2';
+		
 		});
+	hammertime.on("swiperight", function(ev) {
+        
+		
+		});
+	
 	}
 
 
