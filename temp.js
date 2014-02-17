@@ -43,7 +43,7 @@ function route(event) {
         hash = window.location.hash;
 	
     if (hash === "#page2") {
-        page = merge(strVar, {htmlBody:  "<img src=\"http://delisle.saskatooncatholic.ca/sites/delisle.saskatooncatholic.ca/files/sample-1.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
+        page = merge(strVar, {htmlBody:  "<img src=\"http://192.168.1.100:1337/lastsnap.jpg" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
 		if (oldUrl === "#page3"){
 		slider.slidePageFrom($(page), "left");
 		}else{		
