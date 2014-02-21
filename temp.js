@@ -38,7 +38,7 @@ function route(event) {
     var page,
         hash = window.location.hash;
 	
-    if (hash === "#page2") {
+    if (hash === "#page1") {
         page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
 		if (oldUrl === "#page3"){
 		slider.slidePageFrom($(page), "left");
@@ -48,7 +48,7 @@ function route(event) {
 		
 	
 		
-    } else if (hash === "#page3") {
+    } else if (hash === "#page2") {
 		oldUrl = hash;
         page = merge(strVar, {htmlBody: "<img src=\"http:\/\/192.168.1.101:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img><button class=\"topcoat-button\" onClick=\"window.location.reload()\">Reload<\/button>", name: "Camera", hashHome: "#"});
         slider.slidePageFrom($(page), "right");
@@ -58,7 +58,7 @@ function route(event) {
 	
     }
 	else{
-	page = merge(strVar, {htmlBody: homePage, name: "Bel-lijst", hashHome: ""});
+	page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
 	slider.slidePageFrom($(page), "left");
 	oldUrl = hash;
 

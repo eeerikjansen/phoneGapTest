@@ -5,6 +5,7 @@
     // it will call the event `deviceready`.
     // 
     document.addEventListener("deviceready", onDeviceReady, false);
+	document.addEventListener("resume", yourCallbackFunction, false);
 	/* window.addEventListener('load', function () {
     new FastClick(document.body);
 }, false); */
@@ -12,7 +13,7 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
 	var devid;
-	
+	alert("test");
            var pushNotification;
             
             function onDeviceReady() {
@@ -65,7 +66,12 @@
 					alert(txt); 
 				} 
             }
-            
+			
+			function onResume() {
+			alert("welkom terug");
+			window.location.reload();
+			}
+				
             // handle APNS notifications for iOS
             function onNotificationAPN(e) {
                 if (e.alert) {
