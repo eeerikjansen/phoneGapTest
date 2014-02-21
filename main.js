@@ -5,9 +5,9 @@
     // it will call the event `deviceready`.
     // 
     document.addEventListener("deviceready", onDeviceReady, false);
-	window.addEventListener('load', function () {
+	/* window.addEventListener('load', function () {
     new FastClick(document.body);
-}, false);
+}, false); */
 
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
