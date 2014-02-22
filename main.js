@@ -5,7 +5,7 @@
     // it will call the event `deviceready`.
     // 
     document.addEventListener("deviceready", onDeviceReady, false);
-	document.addEventListener("resume", yourCallbackFunction, false);
+	document.addEventListener("resume", onResume, false);
 	/* window.addEventListener('load', function () {
     new FastClick(document.body);
 }, false); */
