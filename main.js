@@ -6,24 +6,25 @@
     // 
     document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener("resume", onResume, false);
-	/* window.addEventListener('load', function () {
-    new FastClick(document.body);
-}, false); */
+/* 	window.addEventListener('load', function () {
+    
+}, false);  */
 
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
 	var devid;
-	alert("test");
+	
            var pushNotification;
             
             function onDeviceReady() {
                 //$("#app-status-ul").append('<li>deviceready event received</li>');
-                
+                new FastClick(document.body);
 				var applaunchCount = window.localStorage.getItem('launchCount');
 				
 				if(applaunchCount){
 					//This is a second time launch, and count = applaunchCount
 					$( "#btn" ).hide();
+					alert("eerste keer");
 				}else{
 					//Local storage is not set, hence first time launch. set the local storage item
 				window.localStorage.setItem('launchCount',1);
