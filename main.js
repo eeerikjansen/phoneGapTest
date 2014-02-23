@@ -117,7 +117,7 @@
                     	{
 							//$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 							alert("Er is aangebeld!")
-							//window.location.reload();
+							window.location.reload();
 							// if the notification contains a soundname, play it.
 							//var my_media = new Media("/android_asset/www/"+e.soundname);
 							//my_media.play();
@@ -130,11 +130,11 @@
 							//$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
 						//alert(e.payload.foto2);
-						$("#more").on("click", function() {
-						$("#content").replaceWith("<div id=\"content\"><h2>Eerder<\/h2><img src=\"http://83.83.3.214:1337/"+ e.payload.foto2 + "\"><\/img><div\/>");
-						$("#content").append("<img src=\"http://83.83.3.214:1337/"+ e.payload.foto3 + "\"><\/img>");
-						$("#content").append("<img src=\"http://83.83.3.214:1337/"+ e.payload.foto4 + "\"><\/img>");
-						});
+						//$("#more").on("click", function() {
+						//$("#content").replaceWith("<div id=\"content\"><h2>Eerder<\/h2><img src=\"http://83.83.3.214:1337/"+ e.payload.foto2 + "\"><\/img><div\/>");
+						//$("#content").append("<img src=\"http://83.83.3.214:1337/"+ e.payload.foto3 + "\"><\/img>");
+						//$("#content").append("<img src=\"http://83.83.3.214:1337/"+ e.payload.foto4 + "\"><\/img>");
+						//});
 						//$("#more").prepend('<li class="topcoat-list__item">'+ e.payload.message +'&nbsp;&nbsp;&nbsp;Er is aangebeld.'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;

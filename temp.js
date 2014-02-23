@@ -39,7 +39,7 @@ function route(event) {
         hash = window.location.hash;
 	
     if (hash === "#page1") {
-        page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img><p><button class=\"topcoat-button\" id=\"more\" >Meer foto's..<\/button><\/p><div id =\"content\"></div>", name: "Laatste foto", hashHome: "#"});
+        page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img><p><\/p><div id =\"content\"></div>", name: "Laatste foto", hashHome: "#"});
 		if (oldUrl === "#page3"){
 		slider.slidePageFrom($(page), "left");
 		}else{		
