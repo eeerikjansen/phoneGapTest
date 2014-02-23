@@ -79,13 +79,6 @@ function merge(tpl, data) {
 
 route();
 
-$(document).ready( function() {
-    $("#more").on("click", function() {
-		alert("jes");
-        $("#content").load("http://192.168.1.101:1337/");
-    });
-});
-
 
 
 
