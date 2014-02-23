@@ -13,6 +13,7 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
 	var devid;
+
 	
            var pushNotification;
             
@@ -137,6 +138,10 @@
 						//});
 						//$("#more").prepend('<li class="topcoat-list__item">'+ e.payload.message +'&nbsp;&nbsp;&nbsp;Er is aangebeld.'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+						window.localStorage.setItem('foto2',e.payload.foto2);
+						window.localStorage.setItem('foto3',e.payload.foto3);
+						window.localStorage.setItem('foto4',e.payload.foto4);
+						
                     break;
                     
                     case 'error':
