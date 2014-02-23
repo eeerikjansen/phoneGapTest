@@ -131,7 +131,7 @@
 						}
 						//alert(e.payload.foto2);
 						//$("#more").on("click", function() {
-						$("#content").replaceWith("<div id=\"content\"><h2>Eerder<\/h2><img src=\"http://83.83.3.214:1337/"+ e.payload.foto2 + "\"><\/img><\/div>");
+						$("#content").append("<h2>Eerder<\/h2><img src=\"http://83.83.3.214:1337/"+ e.payload.foto2 + "\"><\/img>");
 						$("#content").append("<img src=\"http://83.83.3.214:1337/"+ e.payload.foto3 + "\"><\/img>");
 						$("#content").append("<img src=\"http://83.83.3.214:1337/"+ e.payload.foto4 + "\"><\/img>");
 						//});
