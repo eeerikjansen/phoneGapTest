@@ -39,7 +39,7 @@ function route(event) {
         hash = window.location.hash;
 	
     if (hash === "#page1") {
-        page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
+        page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img><p><button class=\"topcoat-button\" id=\"more\" >Meer foto's..<\/button><\/p><div id =\"content\"></div>", name: "Laatste foto", hashHome: "#"});
 		if (oldUrl === "#page3"){
 		slider.slidePageFrom($(page), "left");
 		}else{		
@@ -50,7 +50,7 @@ function route(event) {
 		
     } else if (hash === "#page2") {
 		oldUrl = hash;
-        page = merge(strVar, {htmlBody: "<img src=\"http:\/\/192.168.1.101:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img><button class=\"topcoat-button\" onClick=\"window.location.reload()\">Reload<\/button>", name: "Camera", hashHome: "#"});
+        page = merge(strVar, {htmlBody: "<img src=\"http:\/\/192.168.1.101:8081\/\" alt=\"Dit werkt alleen via de Wifi van Ted Bafland.\"><\/img><p><button class=\"topcoat-button\" onClick=\"window.location.reload()\">Reload<\/button><\/p>", name: "Camera", hashHome: "#"});
         slider.slidePageFrom($(page), "right");
 		
 		
@@ -58,7 +58,7 @@ function route(event) {
 	
     }
 	else{
-	page = merge(strVar, {htmlBody:  "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img>", name: "Laatste foto", hashHome: "#"});
+	page = merge(strVar, {htmlBody: "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img><p><button class=\"topcoat-button\" id=\"more\" >Meer foto's..<\/button><\/p><div id =\"content\"></div>", name: "Laatste foto", hashHome: "#"});
 	slider.slidePageFrom($(page), "left");
 	oldUrl = hash;
 
@@ -78,6 +78,13 @@ function merge(tpl, data) {
 }
 
 route();
+
+$(document).ready( function() {
+    $("#more").on("click", function() {
+		alert("jes");
+        $("#content").load("http://192.168.1.101:1337/");
+    });
+});
 
 
 

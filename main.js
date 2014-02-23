@@ -21,6 +21,10 @@
                 new FastClick(document.body);
 				var applaunchCount = window.localStorage.getItem('launchCount');
 				
+				$("#more").on("click", function() {
+        $("#content").load("http://192.168.1.101:1337/");
+    });
+				
 				if(applaunchCount){
 					//This is a second time launch, and count = applaunchCount
 					$( "#btn" ).hide();
@@ -126,8 +130,8 @@
 							else{alert("Op "+ e.payload.message + " is er aangebeld.")}
 							//$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
-						
-						$("#lijst").prepend('<li class="topcoat-list__item">'+ e.payload.message +'&nbsp;&nbsp;&nbsp;Er is aangebeld.'+' </li>');
+						alert(e.payload.foto2);
+						$("#more").prepend('<li class="topcoat-list__item">'+ e.payload.message +'&nbsp;&nbsp;&nbsp;Er is aangebeld.'+' </li>');
 						//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
                     
