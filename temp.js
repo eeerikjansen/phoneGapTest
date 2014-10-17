@@ -1,4 +1,5 @@
-
+// var socketio = io.connect("192.168.0.201:1337");
+ 
 var strVar="";
 strVar += " <div><div class=\"header\"><div class=\"topcoat-navigation-bar\">";
 strVar += "			<div class=\"topcoat-navigation-bar__item center full\">";
@@ -65,7 +66,7 @@ function route(event) {
 	 var foto3 = window.localStorage.getItem('foto3');
 	 var foto4 = window.localStorage.getItem('foto4');
 	
-	page = merge(strVar, {htmlBody: "<img src=\"http://83.83.3.214:1337/lastsnap.jpg\" alt=\"Laatste snapshot\"><\/img><p><div id =\"content\"><h2>Eerder<\/h2><img src=\"http://83.83.3.214:1337/"+ foto2 + "\"><\/img><img src=\"http://83.83.3.214:1337/"+ foto3 + "\"><\/img><img src=\"http://83.83.3.214:1337/"+ foto4 + "\"><\/img></div></div>", name: "Laatste foto", hashHome: "#"});
+	page = merge(strVar, {htmlBody: "<button id=\"registratie\" class=\"topcoat-button\">Update<\/button><p><div id =\"content\"><div id=\"registratieTabel\"></div></div></div>", name: "Laatste Bel", hashHome: "#"});
 	slider.slidePageFrom($(page), "left");
 	oldUrl = hash;
 
@@ -86,7 +87,38 @@ function merge(tpl, data) {
 
 route();
 
+//// socket io connectie
+function onDeviceReady() {
+//$( document ).ready(function() {
+  // Handler for .ready() called.
+console.log("Ready Doc");
+var socket = io.connect('http://192.168.0.201:3000');
+	console.log("connected");
+	
+socket.on("regidb", function(data) {
+	
+	if (typeof data[0] === "object"){	
+		var content = "<div id=\"registratieTabel\"><table data-role=\"table\" class=\"ui-responsive table-stroke ui-shadow\"><thead>"
+			content += "<tr><th data-priority=\"1\">Datum</th></tr></thead><tbody>"
+			for(i=0; i<data.length; i++){
+				content += '<tr><td>'+ data[i].Tijd + '</td></tr>';
+			}
+			content += "</tbody></table></div>"
+	
+		$( '#registratieTabel' ).replaceWith(content);
+		}
+	});
+	
 
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
 
+  $('#registratie').click(function(){
+	console.log("clicked");
+	socket.emit("registratie", { "message" : "registratie"});
+});
 
-    
+});
+

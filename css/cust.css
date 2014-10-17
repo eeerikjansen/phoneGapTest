@@ -21,3 +21,9 @@ width:95%;
 html, body {
     height:4000;
 	}
+	
+	table {
+margin-left:auto; 
+    margin-right:auto;
+	color: white;
+}
