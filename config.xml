@@ -7,7 +7,7 @@
 
     <!-- versionCode is optional and Android only -->
 	<name>Deurbel Asterstraat</name>
-	<preference name="phonegap-version" value="3.3.0" />
+	<preference name="phonegap-version" value="3.6.3" />
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
