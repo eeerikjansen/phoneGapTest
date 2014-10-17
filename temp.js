@@ -120,5 +120,5 @@ socket.on("regidb", function(data) {
 	socket.emit("registratie", { "message" : "registratie"});
 });
 
-});
+};
 
