@@ -1,5 +1,5 @@
 // var socketio = io.connect("192.168.0.201:1337");
- 
+ document.addEventListener("deviceready", onDeviceReady2, false);
 var strVar="";
 strVar += " <div><div class=\"header\"><div class=\"topcoat-navigation-bar\">";
 strVar += "			<div class=\"topcoat-navigation-bar__item center full\">";
@@ -88,10 +88,11 @@ function merge(tpl, data) {
 route();
 
 //// socket io connectie
-function onDeviceReady() {
+//function onDeviceReady() {
 //$( document ).ready(function() {
   // Handler for .ready() called.
-console.log("Ready Doc");
+  function onDeviceReady2() {
+alert("Ready Doc");
 var socket = io.connect('http://192.168.0.201:3000');
 	console.log("connected");
 	
