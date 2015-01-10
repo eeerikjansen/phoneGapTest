@@ -6,16 +6,16 @@ strVar += "			<div class=\"topcoat-navigation-bar__item center full\">";
 strVar += "		<h1 class=\"topcoat-navigation-bar__title\">Deurbel Asterstraat<\/h1>";
 strVar += "<\/div><\/div><div id=\"btn\"><\/div><\/div>";
 
-strVar += "<div class =\"scroller\"><div class=\"topcoat-tab-bar full\">";
-strVar += "   <label class=\"topcoat-tab-bar__item\">";
-strVar += "     <input type=\"radio\" name=\"topcoat\">";
-strVar += "     <a class=\"topcoat-tab-bar__button full\" href=\"{{hashHome}}\">Foto<\/a>";
-strVar += "   <\/label>";
-strVar += "   <label class=\"topcoat-tab-bar__item\">";
-strVar += "     <input type=\"radio\" name=\"topcoat\">";
-strVar += "     <a class=\"topcoat-tab-bar__button full\" href=\"#page2\">Video<\/a>";
-strVar += "   <\/label>";
-strVar += "<\/div>";
+//strVar += "<div class =\"scroller\"><div class=\"topcoat-tab-bar full\">";
+//strVar += "   <label class=\"topcoat-tab-bar__item\">";
+//strVar += "     <input type=\"radio\" name=\"topcoat\">";
+//strVar += "     <a class=\"topcoat-tab-bar__button full\" href=\"{{hashHome}}\">Foto<\/a>";
+//strVar += "   <\/label>";
+//strVar += "   <label class=\"topcoat-tab-bar__item\">";
+//strVar += "     <input type=\"radio\" name=\"topcoat\">";
+//strVar += "     <a class=\"topcoat-tab-bar__button full\" href=\"#page2\">Video<\/a>";
+//strVar += "   <\/label>";
+//strVar += "<\/div>";
 strVar += "<header>";
 strVar += "<h2>{{name}}<\/h2>";
 strVar += "<\/header>";
@@ -92,10 +92,11 @@ route();
 //$( document ).ready(function() {
   // Handler for .ready() called.
   function onDeviceReady2() {
-alert("Ready Doc");
+//alert("Ready Doc");
+
 var socket = io.connect('http://192.168.0.201:3000');
 	console.log("connected");
-	
+socket.emit("registratie", { "message" : "registratie"});	
 socket.on("regidb", function(data) {
 	
 	if (typeof data[0] === "object"){	
@@ -119,6 +120,7 @@ socket.on("regidb", function(data) {
   $('#registratie').click(function(){
 	console.log("clicked");
 	socket.emit("registratie", { "message" : "registratie"});
+	socket.emit("uniekID", { "message" : regid2});
 });
 
 };
