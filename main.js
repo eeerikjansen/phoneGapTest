@@ -13,6 +13,7 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     //
 	var devid;
+	
 
 	
            var pushNotification;
@@ -107,7 +108,7 @@
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
 						console.log("regID = " + e.regid);
-						
+						regid2 = e.regid;
 					}
                     break;
                     
